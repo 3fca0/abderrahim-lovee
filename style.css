@@ -1,0 +1,119 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  overflow: hidden;
+  font-family: Arial, sans-serif;
+  color: #fff;
+  background:
+    radial-gradient(circle at 20% 20%, #3a123f 0, transparent 35%),
+    radial-gradient(circle at 80% 80%, #181d55 0, transparent 35%),
+    #090912;
+}
+
+.card {
+  width: min(92vw, 520px);
+  padding: 48px 30px;
+  text-align: center;
+  border: 1px solid rgba(255,255,255,.15);
+  border-radius: 28px;
+  background: rgba(255,255,255,.07);
+  box-shadow: 0 25px 80px rgba(0,0,0,.45);
+  backdrop-filter: blur(16px);
+  position: relative;
+  z-index: 2;
+}
+
+.heart {
+  width: 78px;
+  height: 78px;
+  margin: 0 auto 22px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  font-size: 42px;
+  color: #ff6b9d;
+  background: rgba(255,107,157,.12);
+  box-shadow: 0 0 40px rgba(255,107,157,.25);
+  animation: pulse 1.6s infinite;
+}
+
+.eyebrow {
+  color: #c9c7d8;
+  font-size: 14px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+h1 {
+  margin: 12px 0 16px;
+  font-size: clamp(38px, 10vw, 64px);
+}
+
+h1 span {
+  color: #ff6b9d;
+}
+
+.message {
+  color: #d7d5df;
+  line-height: 1.7;
+  font-size: 17px;
+}
+
+button {
+  margin-top: 28px;
+  border: 0;
+  border-radius: 999px;
+  padding: 15px 28px;
+  font-size: 16px;
+  font-weight: 700;
+  color: #fff;
+  background: linear-gradient(135deg, #ff4f91, #8d5cff);
+  box-shadow: 0 12px 30px rgba(255,79,145,.25);
+  cursor: pointer;
+  transition: transform .2s, box-shadow .2s;
+}
+
+button:active {
+  transform: scale(.95);
+}
+
+.result {
+  min-height: 28px;
+  margin-top: 20px;
+  color: #ffb4cf;
+  font-weight: 600;
+}
+
+footer {
+  position: fixed;
+  bottom: 18px;
+  color: #8f8c9d;
+  font-size: 13px;
+}
+
+.floating-heart {
+  position: fixed;
+  bottom: -30px;
+  z-index: 1;
+  pointer-events: none;
+  animation: floatUp linear forwards;
+}
+
+@keyframes pulse {
+  50% { transform: scale(1.08); }
+}
+
+@keyframes floatUp {
+  to {
+    transform: translateY(-110vh) rotate(25deg);
+    opacity: 0;
+  }
+}
